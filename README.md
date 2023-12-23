@@ -20,6 +20,5 @@ for i in repeat_words:
 
 #выводим результат
 print(f'В строке {string}:')
-
 for i in fin_repeat_words:
     print(f'{i[0]} кол-во повторений: {i[1]}')
