@@ -1,0 +1,39 @@
+@startuml
+
+' Базовый класс Object
+class Object {
+    + ToString(): string
+    + GetHashCode(): int
+    + Equals(obj: object): bool
+}
+
+' Класс CPU
+class CPU {
+    + Brand: string
+    + Model: string
+    + CoreCount: int
+    + ThreadCount: int
+    + BaseClock: double
+    + MaxClock: double
+    + SocketType: string
+    + Details: CPUDetails
+
+    + CPU(brand: string, model: string, coreCount: int, threadCount: int, baseClock: double, maxClock: double, socketType: string, details: CPUDetails)
+    + GetInfo(): string
+}
+
+' Структура CPUDetails
+class CPUDetails <<struct>> {
+    + Purpose: string
+    + PowerConsumption: int
+    + AdditionalFeatures: string
+
+    + CPUDetails(purpose: string, powerConsumption: int, additionalFeatures: string)
+    + GetDetails(): string
+}
+
+' Наследование и зависимости
+Object <|-- CPU
+CPU o-- CPUDetails : "Details"
+
+@enduml
